@@ -2,3 +2,4 @@ node_modules
 public
 rendered/resume*
 resume.json
+.DS_STORE
