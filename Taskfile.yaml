@@ -3,7 +3,7 @@ version: '3'
 vars:
   sshHost: moriah
   imageUrl: https://linus-frotscher.space/image/headshot.jpg
-  faviconUrl: https://linus-frotscher.space/favicon/favicon.png
+  faviconUrl: https://linus-frotscher.space/image/favicon.png
 tasks:
   default: ${GOTASK_BIN:-task} --list
   npmInstall:
