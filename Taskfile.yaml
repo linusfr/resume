@@ -1,0 +1,50 @@
+version: '3'
+
+vars:
+  sshHost: moriah
+  imageUrl: https://linus-frotscher.space/image/headshot.jpg
+  faviconUrl: https://linus-frotscher.space/favicon/favicon.png
+tasks:
+  default: ${GOTASK_BIN:-task} --list
+  npmInstall:
+    desc: Perform npm install
+    cmds:
+      - npm install
+  yamlToJson:
+    desc: Converts the resume YAML file to JSON
+    cmds:
+      - yq --output-format=json --prettyPrint resume.yaml > resume.json
+  replaceImageUrl:
+    desc: Updates the image url in rendered/resume.html
+    cmds:
+      - sed --in-place 's|src="https://s.gravatar.com[^"]*"|src="{{.imageUrl}}"|g' rendered/resume.html
+  replaceFaviconUrl:
+    desc: Updates the image url in rendered/resume.html
+    cmds:
+      - sed --in-place 's|</title>|</title><link rel="icon" type="image/x-icon" href="{{.faviconUrl}}">|g' rendered/resume.html
+  exportHtml:
+    desc: Exports the resume in html format
+    deps:
+      - npmInstall
+      - yamlToJson
+    cmds:
+      - npm run exportHtml
+  exportPdf:
+    desc: Exports the resume in pdf format.
+    deps:
+      - npmInstall
+      - yamlToJson
+    cmds:
+      - npm run exportPdf
+  deploy:
+    desc: Deploys the rendered html for the resume to moriah
+    cmds:
+      - rsync rendered/resume.html "{{.sshHost}}":/home/linus/private/resume/rendered/resume.html
+  deployImage:
+    desc: Deploys the headshot.jpg for the resume to moriah
+    cmds:
+      - rsync images/headshot.jpg "{{.sshHost}}":/home/linus/images/headshot.jpg
+  deployFavicon:
+    desc: Deploys the favicon.png for the resume to moriah
+    cmds:
+      - rsync images/favicon.png "{{.sshHost}}":/home/linus/images/favicon.png

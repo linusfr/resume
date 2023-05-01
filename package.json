@@ -1,0 +1,30 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "config": {
+    "theme": "elegant"
+  },
+  "scripts": {
+    "init": "resume init",
+    "validate": "resume validate",
+    "serve": "resume serve --dir public --theme $npm_package_config_theme",
+    "exportPdf": "resume export --theme $npm_package_config_theme --format .pdf rendered/resume.pdf",
+    "exportHtml": "resume export --theme $npm_package_config_theme --format html rendered/resume.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linusfr/resume.git"
+  },
+  "author": "Linus Frotscher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linusfr/resume/issues"
+  },
+  "homepage": "https://github.com/linusfr/resume#readme",
+  "dependencies": {
+    "jsonresume-theme-elegant": "^1.16.1",
+    "resume-cli": "^3.0.8"
+  }
+}
