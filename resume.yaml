@@ -4,7 +4,15 @@ basics:
   label: Site Reliability Engineer
   email: linus.frotscher@gmail.com
   url: https://linus-frotscher.space
-  summary: Hello, my name is Linus, a Site Reliability Engineer from Hamburg. I hold a Bachelor's degree in Applied Computer Science from Flensburg University. During my studies, I interned at Zenner IoT Solutions in Hamburg, where I was introduced to DevOps and automation. As a member of the DevOps team, I managed all VMs and maintained docker swarm setups, utilizing various tools such as Gitlab CI/CD, Ansible, Nginx, and Graylog for logging. I also set up a k3s Kubernetes cluster and wrote my thesis on "Comparing Docker Swarm to Kubernetes in Preparation of Migration Projects." After completing my degree, I continued to work at Zenner IoT Solutions before moving to German Edge Cloud, where I currently work as an SRE, helping development teams deploy with greater frequency and reliability while minimizing service interruptions.
+  summary: >-
+    Born and raised in Hamburg, I stayed true to the north and decided to study Applied Computer Science in Flensburg which I finished with a Bachelor of Science in 2021.
+    During my studies, my focus has been on IoT which is why I interned at Zenner IoT Solutions in Hamburg.
+    There I got introduced to DevOps and automation. As a member of the DevOps team, I managed all VMs and maintained docker swarm setups, utilizing various tools such as Gitlab CI/CD, Ansible, Nginx, as well as Graylog for logging alongside many others.
+    During my time as an intern, I set up a k3s kubernetes cluster as well, which raised my interest in container orchestration further.
+    Because of that I decided to write my thesis on "Comparing Docker Swarm to Kubernetes in Preparation of Migration Projects." about this topic.
+    After finishing my bachelors, I continued to work at Zenner IoT Solutions before starting at German Edge Cloud.
+    Here I currently work as an SRE supporting development teams in deploying with greater frequency and reliability while minimizing service interruptions.
+    On a personal level, my passion is surfing, which offers me the best balance between the IT world and nature.
   location:
     countryCode: DE
   profiles:
@@ -18,14 +26,19 @@ work:
   - name: German Edge Cloud
     position: Site Reliability Engineer
     startDate: "2021-12-01"
-    summary: The German Edge Cloud has two main markets it competes in. Firstly in the cloud, where they have a managed kubernetes offering based on kkp from kubermatic. This in turn utilizes an openstack instance which manages infrastructure over three datacenters which belong to the company. Secondly on the edge, here the company offers an edge enabling customers to self-service VMs on the edge through a management software development by the German Edge Cloud. This is for example used by the Fraunhofer Institute to run compute intensive simulations.
+    summary: >-
+      With the cloud and the edge, the German Edge Cloud has two main markets it competes in.
+      In the cloud, German Edge Cloud provides a managed kubernetes offering based on kkp from kubermatic.
+      This in turn utilizes an openstack instance which manages infrastructure over three datacenters which belong to the company.
+      In the edge market, they offer an edge enabling customers to self-service VMs on the edge through a management software developed by the German Edge Cloud.
+      This is for example used by the Fraunhofer Institute to run compute intensive simulations.
     highlights:
-      - Maintained multiple rancher instances providing cluster access management to the entire company. For this rancher was set up and monitored. Additionally all permission management was done through terraform.
-      - Development of a Production Readiness Review which is used to engage internal teams in a SRE manner.
-      - Engaged internal development teams utilizing the previously outlined Production Readiness Review enabling the teams to increase the reliability of their respective products.
-      - Supported the companies platform on many clusters and provided observabily.
-      - Managed the Operations Center, a product used to provision openstack resources through a simplified UI on Customer Edges working with the Openstack CLI to manage customer workloads.
-      - Incident Management including PMAs.
+      - Maintaining multiple rancher instances providing cluster access management to the entire company. For this, rancher was set up and monitored. Additionally, all permission management is done through terraform.
+      - Development of a production readiness review which is used to engage internal teams in a SRE manner.
+      - Engaging internal development teams utilizing the previously outlined production readiness review enabling the teams to increase the reliability of their respective products.
+      - Supporting the company's platform on many clusters and providing observabily.
+      - Managing the operations center, a product used to provision openstack resources through a simplified UI on customer edges working with the openstack CLI to manage customer workloads.
+      - Incident management including PMAs.
       - Providing a central ArgoCD used across many teams.
       - Automations using Argo Workflows.
     url: https://gec.io
@@ -34,15 +47,15 @@ work:
     startDate: "2021-03-01"
     endDate: "2021-08-31"
     highlights:
-      - Lifecycle Management of all VMs using Ansible
+      - Lifecycle management of all VMs using Ansible
       - Setting up and using the swarm mode from docker.
       - Management of Gitlab on Premise and Bitwarden on Premise
-      - CI/CD Pipeline Development
-      - Providing NGINX and configuring it
+      - CI/CD pipeline development
+      - Providing and configuring NGINX
     url: https://zenner-iot.com
     location: Hamburg, Deutschland
   - name: ZENNER IoT Solutions GmbH
-    position: Working Student in the DevOps Team
+    position: Working student in the DevOps team
     startDate: "2020-11-01"
     endDate: "2021-02-28"
     highlights:
@@ -61,9 +74,9 @@ work:
     location: Hamburg
 volunteer:
   - organization: The Social Surf Club e.V.
-    position: Surf Instructor and Mentor
+    position: Surf instructor and supervisor
     startDate: "2013-06-01"
-    summary: Mentor and surf instructor in a surf camp for kids and teenagers in tough life situations.
+    summary: The Social Surf Club e.V. offers free surf camps for kids and teenagers in tough life situations. I help organize the camps and maintain IT components such as the website, the shop, and organizational tooling like slack.
     url: https://thesocialsurfclub.org
 education:
   - institution: Hochschule Flensburg
