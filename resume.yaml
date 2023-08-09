@@ -1,5 +1,6 @@
 $schema: https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json
 basics:
+  image: https://linus-frotscher.space/image/headshot.jpg
   name: Linus Frotscher
   label: Site Reliability Engineer
   email: linus.frotscher@gmail.com
@@ -12,6 +13,7 @@ basics:
     Because of that I decided to write my thesis on "Comparing Docker Swarm to Kubernetes in Preparation of Migration Projects." about this topic.
     After finishing my bachelors, I continued to work at Zenner IoT Solutions before starting at German Edge Cloud.
     Here I currently work as an SRE supporting development teams in deploying with greater frequency and reliability while minimizing service interruptions.
+    To achieve this we develop a deployment setup enabling us to roll out hundreds of applications to dozens of k8s and openshift clusters in a Gitops fashion utilizing ArgoCD, Hashicorp Vault, Gitlab, Renovate, Helm, the carvel suite and bash.
     On a personal level, my passion is surfing, which offers me the best balance between the IT world and nature.
   location:
     countryCode: DE
@@ -33,10 +35,13 @@ work:
       In the edge market, they offer an edge enabling customers to self-service VMs on the edge through a management software developed by the German Edge Cloud.
       This is for example used by the Fraunhofer Institute to run compute intensive simulations.
     highlights:
-      - Maintaining multiple rancher instances providing cluster access management to the entire company. For this, rancher was set up and monitored. Additionally, all permission management is done through terraform.
+      - Development of deployment setup for the safe rollout of hundreds of applications to dozens of K8s and Openshift clusters in a Gitops fashion with ArgoCD, HashiCorp Vault, Gitlab, Renovate, Helm, the Carvel suite and bash.
+      - Monitoring, Logging and Alerting with Grafana, Alertmanager, Prometheus, Thanos, VictoriaMetrics, Opensearch, Loki and Opsgenie.
+      - Maintaining multiple rancher instances providing cluster access management to the entire company. For this, infrastructure on openstack was provisioned through terraform, On that RKE clusters are set up rancher is rolled out onto the clusters.
+      - Automation of repetitive tasks with Golang, Python, Ansible and Bash.
       - Development of a production readiness review which is used to engage internal teams in a SRE manner.
-      - Engaging internal development teams utilizing the previously outlined production readiness review enabling the teams to increase the reliability of their respective products.
-      - Supporting the company's platform on many clusters and providing observabily.
+      - Engaging internal development teams utilizing the previously outlined production readiness review including SLIs and SLOs enabling the teams to increase the reliability of their respective products.
+      - Supporting the company's platform on many clusters and providing observability.
       - Managing the operations center, a product used to provision openstack resources through a simplified UI on customer edges working with the openstack CLI to manage customer workloads.
       - Incident management including PMAs.
       - Providing a central ArgoCD used across many teams.
@@ -95,6 +100,8 @@ skills:
       - Alertmanager
       - Loki
       - Grafana
+      - Thanos
+      - VictoriaMetrics
       - Opensearch
       - Graylog
   - name: Infrastructure as Code
@@ -103,12 +110,13 @@ skills:
       - ArgoCD
       - Argo Workflows
       - Gitlab
+      - Ansible
   - name: CI/CD
     keywords:
       - Gitlab
   - name: Carvel tools
     keywords:
-      - Vendor
+      - vendor
       - ytt
   - name: Databases
     keywords:

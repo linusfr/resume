@@ -1,7 +1,8 @@
 version: '3'
 
 vars:
-  sshHost: moriah
+  sshHost: smallbird
+  sshDir: /opt/private
   imageUrl: https://linus-frotscher.space/image/headshot.jpg
   faviconUrl: https://linus-frotscher.space/image/favicon.png
 tasks:
@@ -29,6 +30,8 @@ tasks:
       - yamlToJson
     cmds:
       - npm run exportHtml
+      - task: replaceFaviconUrl
+      - task: replaceImageUrl
   exportPdf:
     desc: Exports the resume in pdf format.
     deps:
@@ -36,15 +39,16 @@ tasks:
       - yamlToJson
     cmds:
       - npm run exportPdf
-  deploy:
-    desc: Deploys the rendered html for the resume to moriah
+  deployHtml:
+    desc: Deploys the rendered html for the resume to sshHost
     cmds:
-      - rsync rendered/resume.html "{{.sshHost}}":/home/linus/private/resume/rendered/resume.html
+      - rsync rendered/resume.html "{{.sshHost}}":{{.sshDir}}/resume/rendered/resume.html
+      - ssh "{{.sshHost}}" "sudo chown www-data:ubuntu {{.sshDir}}/resume/rendered/resume.html"
   deployImage:
-    desc: Deploys the headshot.jpg for the resume to moriah
+    desc: Deploys the headshot.jpg for the resume to sshHost
     cmds:
-      - rsync images/headshot.jpg "{{.sshHost}}":/home/linus/images/headshot.jpg
+      - rsync images/headshot.jpg "{{.sshHost}}":{{.sshDir}}/images/headshot.jpg
   deployFavicon:
-    desc: Deploys the favicon.png for the resume to moriah
+    desc: Deploys the favicon.png for the resume to sshHost
     cmds:
-      - rsync images/favicon.png "{{.sshHost}}":/home/linus/images/favicon.png
+      - rsync images/favicon.png "{{.sshHost}}":{{.sshDir}}/images/favicon.png
